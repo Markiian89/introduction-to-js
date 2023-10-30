@@ -32,71 +32,133 @@
 // alert(finish);
 
 // Lesson 20 Operators and operations
-let age = parseInt(prompt("Enter your age:", "0"));
+// let age = parseInt(prompt("Enter your age:", "0"));
 
-if (age <= 17) {
-  let response = confirm("Do you study at school?");
-} else if (age > 17 && age < 25) {
-  let response = confirm("Do you study at university?");
-} else if (age >= 25 && age < 69) {
-  let response = confirm("Do you have a job?");
-} else {
-  let response = confirm("What are you doing?");
-}
+// if (age <= 17) {
+//   let response = confirm("Do you study at school?");
+// } else if (age > 17 && age < 25) {
+//   let response = confirm("Do you study at university?");
+// } else if (age >= 25 && age < 69) {
+//   let response = confirm("Do you have a job?");
+// } else {
+//   let response = confirm("What are you doing?");
+// }
 
-let displayValue = prompt("Введіть значення властивості display (block, flex, grid, inline, none):");
+// let displayValue = prompt("Введіть значення властивості display (block, flex, grid, inline, none):");
 
-switch (displayValue) {
-  case "block":
-    alert("display: block;");
-    break;
-  case "flex":
-    alert("display: flex;");
-    break;
-  case "grid":
-    alert("display: grid;");
-    break;
-  case "inline":
-    alert("display: inline;");
-    break;
-  case "none":
-    alert("display: none;");
-    break;
-  default:
-    alert("Set 'display: inline-block;'");
-    break;
-}
+// switch (displayValue) {
+//   case "block":
+//     alert("display: block;");
+//     break;
+//   case "flex":
+//     alert("display: flex;");
+//     break;
+//   case "grid":
+//     alert("display: grid;");
+//     break;
+//   case "inline":
+//     alert("display: inline;");
+//     break;
+//   case "none":
+//     alert("display: none;");
+//     break;
+//   default:
+//     alert("Set 'display: inline-block;'");
+//     break;
+// }
 
-function isNumericInput(inputValue) {
-    return /^\d+$/.test(inputValue);
+// function isNumericInput(inputValue) {
+//     return /^\d+$/.test(inputValue);
+//   }
+  
+//   function multiplyBy12() {
+//     let numericValue;
+  
+//     do {
+//       let inputValue = prompt("Enter a positive numeric value:");
+  
+//       if (isNumericInput(inputValue)) {
+//         numericValue = parseFloat(inputValue);
+  
+//         if (!isNaN(numericValue) && numericValue > 0) {
+//           let result = numericValue * 12;
+//           alert(`${numericValue} by 12: ${result}`);
+//         } else {
+//           alert("Your number is incorect, please enter corect number");
+//         }
+//       } else {
+//         alert("Your number is incorect, please enter corect number");
+//       }
+//     } while (!isNumericInput(inputValue) || isNaN(numericValue) || numericValue <= 0);
+//   }
+  
+// multiplyBy12();
+  
+// for (let number = 2; number <= 50; number += 2) {
+//     console.log(number);
+// }
+
+// Lesson 21 Локальні та зовнішні змінні, функції
+
+function maxNumber(a, b) {
+    if (a > b) {
+      return a;
+    } else if (b > a) {
+      return b;
+    } else {
+      return "a = b";
+    }
   }
   
-  function multiplyBy12() {
-    let numericValue;
+  let a = parseFloat(prompt("Enter first number (a):"));
+  let b = parseFloat(prompt("Enter second number (b):"));
   
-    do {
-      let inputValue = prompt("Enter a positive numeric value:");
-  
-      if (isNumericInput(inputValue)) {
-        numericValue = parseFloat(inputValue);
-  
-        if (!isNaN(numericValue) && numericValue > 0) {
-          let result = numericValue * 12;
-          alert(`${numericValue} by 12: ${result}`);
-        } else {
-          alert("Your number is incorect, please enter corect number");
-        }
-      } else {
-        alert("Your number is incorect, please enter corect number");
-      }
-    } while (!isNumericInput(inputValue) || isNaN(numericValue) || numericValue <= 0);
+  alert(maxNumber(a, b));
+
+
+function reverse(number) {
+    return -number;
   }
   
-multiplyBy12();
+  let inputNumber = parseFloat(prompt("Enter the number"));
+  let reversedNumber = reverse(inputNumber);
+  alert(reversedNumber);
   
-for (let number = 2; number <= 50; number += 2) {
-    console.log(number);
-}
+function three(number, count) {
+    return number + 3 * count;
+    }
+  
+    let number = parseFloat(prompt("Enter the number:"));
+    let count = parseInt(prompt("Enter the number of additions (count):"));
+    alert(three(+number, +count));
+  
+function KmToM(km) {
+    return km * 1000;
+  }
+  
+  function KmToCm(km) {
+    return km * 100000;
+  }
+  
+  function getMetric(metric, km) {
+    if (metric === "m") {
+      return KmToM(km);
+    } else if (metric === "cm") {
+      return KmToCm(km);
+    } else {
+      return "Unknown unit of measurement";
+    }
+  }
+  
+  let metric = prompt("Enter the unit of measurement (m or cm):");
+  let km = parseFloat(prompt("Enter the distance in kilometers:"));
+  
+  if (typeof result === "number") {
+    alert(`Distance in the specified unit: ${result}`);
+  } else {
+    alert(getMetric(metric, km));;
+  }
+  
 
 
   
