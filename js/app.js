@@ -240,6 +240,88 @@
 //   console.log(dell + apple);
   
   
+// Lesson 23 Масиви та методи роботи з ними
+let users = ["Mike", "Nicola", "Tom"];
+
+console.log(users[1]);
+
+users[1] = "Alex";
+
+users.pop();
+users.pop();
+
+console.log(users.length);
+
+
+
+function compareArrays(a, b) {
+    let sumA = a.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    let sumB = b.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  
+    if (sumA > sumB) {
+      console.log("a > b");
+    } else if (sumA < sumB) {
+      console.log("a < b");
+    } else {
+      console.log("a == b");
+    }
+  }
+  
+  let a = [5, 3, -4, 25, 32, -16, 6];
+  let b = [21, -30, 9, 5, 12, -19, 5, 25];
+  
+  compareArrays(a, b);
+
+
+
+
+let phrase = 'I am learning JavaScript right now';
+let wordsArray = phrase.split(' ');
+
+console.log(wordsArray);
+
+
+
+
+let a = [5, 3, 8, 5, 3, 2, 1, 2];
+let b = [];
+
+a.forEach(function (element) {
+  if (b.indexOf(element) === -1) {
+    b.push(element);
+  }
+});
+
+console.log(b);
+
+
+
+function selectionAge(users) {
+    let result = [];
+    for (let i = 0; i < users.length; i++) {
+      let user = users[i];
+      if (user.age > 18 && user.age < 21) {
+        result.push(user.id);
+      }
+    }
+    console.log(result.join(', '));
+  }
+  
+  let users = [
+    { id: 1, age: 17 },
+    { id: 2, age: 18 },
+    { id: 3, age: 19 },
+    { id: 4, age: 21 },
+    { id: 5, age: 17 },
+    { id: 6, age: 20 },
+    { id: 7, age: 25 }
+  ];
+  
+  selectionAge(users);
+  
+  
+
+
   
   
   
