@@ -319,7 +319,7 @@
   
 //   selectionAge(users);
   
-  
+// Lesson 24 Рекурсія та замикання
 // Завдання 1
 // function sumArray(arr) {
 //     if (arr.length === 0) {
