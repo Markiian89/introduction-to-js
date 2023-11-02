@@ -241,83 +241,200 @@
   
   
 // Lesson 23 Масиви та методи роботи з ними
-let users = ["Mike", "Nicola", "Tom"];
+// let users = ["Mike", "Nicola", "Tom"];
 
-console.log(users[1]);
+// console.log(users[1]);
 
-users[1] = "Alex";
+// users[1] = "Alex";
 
-users.pop();
-users.pop();
+// users.pop();
+// users.pop();
 
-console.log(users.length);
+// console.log(users.length);
 
 
 
-function compareArrays(a, b) {
-    let sumA = a.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-    let sumB = b.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+// function compareArrays(a, b) {
+//     let sumA = a.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+//     let sumB = b.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   
-    if (sumA > sumB) {
-      console.log("a > b");
-    } else if (sumA < sumB) {
-      console.log("a < b");
-    } else {
-      console.log("a == b");
-    }
-  }
+//     if (sumA > sumB) {
+//       console.log("a > b");
+//     } else if (sumA < sumB) {
+//       console.log("a < b");
+//     } else {
+//       console.log("a == b");
+//     }
+//   }
   
-  let a = [5, 3, -4, 25, 32, -16, 6];
-  let b = [21, -30, 9, 5, 12, -19, 5, 25];
+//   let a = [5, 3, -4, 25, 32, -16, 6];
+//   let b = [21, -30, 9, 5, 12, -19, 5, 25];
   
-  compareArrays(a, b);
+//   compareArrays(a, b);
 
 
 
 
-let phrase = 'I am learning JavaScript right now';
-let wordsArray = phrase.split(' ');
+// let phrase = 'I am learning JavaScript right now';
+// let wordsArray = phrase.split(' ');
 
-console.log(wordsArray);
-
-
-
-
-let a = [5, 3, 8, 5, 3, 2, 1, 2];
-let b = [];
-
-a.forEach(function (element) {
-  if (b.indexOf(element) === -1) {
-    b.push(element);
-  }
-});
-
-console.log(b);
+// console.log(wordsArray);
 
 
 
-function selectionAge(users) {
-    let result = [];
-    for (let i = 0; i < users.length; i++) {
-      let user = users[i];
-      if (user.age > 18 && user.age < 21) {
-        result.push(user.id);
-      }
-    }
-    console.log(result.join(', '));
-  }
+
+// let a = [5, 3, 8, 5, 3, 2, 1, 2];
+// let b = [];
+
+// a.forEach(function (element) {
+//   if (b.indexOf(element) === -1) {
+//     b.push(element);
+//   }
+// });
+
+// console.log(b);
+
+
+
+// function selectionAge(users) {
+//     let result = [];
+//     for (let i = 0; i < users.length; i++) {
+//       let user = users[i];
+//       if (user.age > 18 && user.age < 21) {
+//         result.push(user.id);
+//       }
+//     }
+//     console.log(result.join(', '));
+//   }
   
-  let users = [
-    { id: 1, age: 17 },
-    { id: 2, age: 18 },
-    { id: 3, age: 19 },
-    { id: 4, age: 21 },
-    { id: 5, age: 17 },
-    { id: 6, age: 20 },
-    { id: 7, age: 25 }
-  ];
+//   let users = [
+//     { id: 1, age: 17 },
+//     { id: 2, age: 18 },
+//     { id: 3, age: 19 },
+//     { id: 4, age: 21 },
+//     { id: 5, age: 17 },
+//     { id: 6, age: 20 },
+//     { id: 7, age: 25 }
+//   ];
   
-  selectionAge(users);
+//   selectionAge(users);
+  
+  
+// Завдання 1
+// function sumArray(arr) {
+//     if (arr.length === 0) {
+//       return 0;
+//     } else {
+//       let currentElement = arr.pop();
+//       return currentElement + sumArray(arr);
+//     }
+//   }
+
+//   let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//   console.log(sumArray(arr));
+
+
+//   function sumArray(arr) {
+//     return arr.length === 0 ? 0 : arr.pop() + sumArray(arr);
+//   }
+  
+//   let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//   console.log(sumArray(arr));
+
+
+//   Завдання 2
+// function deepCount(arr) {
+//     let count = 0;
+  
+//     for (let i = 0; i < arr.length; i++) {
+//       if (Array.isArray(arr[i])) {
+//         count += deepCount(arr[i]);
+//       }
+//       count++;
+//     }
+  
+//     return count;
+//   }
+  
+//   console.log(deepCount([]));
+//   console.log(deepCount([1, 2, 3]));
+//   console.log(deepCount(["x", "y", ["z"]]));
+//   console.log(deepCount([1, 2, [3, 4, [5]]]));
+//   console.log(deepCount([[[[]]]]));
+  
+
+// function deepCount(arr) {
+//     let count = 0;
+  
+//     for (let i = 0; i < arr.length; i++) {
+//       count += Array.isArray(arr[i]) ? deepCount(arr[i]) : 1;
+//     }
+  
+//     return count;
+//   }
+  
+  
+//   console.log(deepCount([]));
+//   console.log(deepCount([1, 2, 3]));
+//   console.log(deepCount(["x", "y", ["z"]]));
+//   console.log(deepCount([1, 2, [3, 4, [5]]]));
+//   console.log(deepCount([[[[]]]]));
+
+// Завдання 3
+
+// const employees = {
+//     development: {
+//         backend: [{name: 'Mike', salary: 2000}, {name: 'Nikola', salary: 2500}],
+//         frontend: [{name: 'Artem', salary: 3000}, {name: 'Alex', salary: 2700}],
+//     },
+//     sales: {
+//         marketing: {
+//             internet_marketers: [{name: 'Nina', salary: 1000}, {name: 'Olena', salary: 1300}],
+//             promotion: [{name: 'Oleg', salary: 1400}, {name: 'Masha', salary: 1700}],
+//         },
+//         sellers:  [{name: 'Max', salary: 900}, {name: 'Donald', salary: 700}, {name: 'Joe', salary: 1100}]
+//     },
+//     designer: [{name: 'Kate', salary: 1800}]
+// }
+
+// function sumSallary(obj) {
+//     let sum = 0;
+
+//     (function calculateSum(obj) {
+//         for (let key in obj) {
+//             if (Array.isArray(obj[key])) {
+//                 obj[key].forEach(employee => sum += employee.salary);
+//             } else {
+//                 calculateSum(obj[key]);
+//             }
+//         }
+//     })(obj);
+
+//     return sum;
+// }
+
+// const totalSalary = sumSallary(employees);
+// console.log(totalSalary);
+
+// Завдання 4
+
+// let arr1 = [12, 15, 7, 31];
+// let arr2 = [9, 3, 17, 12, 4, 81];
+// let arr3 = [6, 11, 16, 15, 11];
+
+// let maxOfAll = Math.max.apply(null, arr1.concat(arr2, arr3));
+
+// console.log(maxOfAll);
+
+
+  
+  
+  
+  
+  
+  
+  
+
   
   
 
