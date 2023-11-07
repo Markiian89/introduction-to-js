@@ -426,6 +426,167 @@
 
 // console.log(maxOfAll);
 
+// Lesson 25 ООП
+
+// Завдання 1
+// class User {
+//     constructor(name, login, age) {
+//       this._name = name;
+//       this.login = login;
+//       this.age = age;
+//     }
+//   }
+  
+//   let user1 = new User('Mike', 'MK_18', 18);
+//   let user2 = new User('', 'NRG', 22);
+  
+//   console.log(user1.login);
+//   console.log(user1.age);
+//   console.log(user2.login);
+//   console.log(user2.age);
+
+// Завдання 2
+
+// class User {
+//     constructor(name, login, age) {
+//       this._name = name;
+//       this.login = login;
+//       this.age = age;
+//     }
+  
+//     getName(isAdmin) {
+//       if (isAdmin) {
+//         return this._name || this.login;
+//       } else {
+//         return 'Permission denied';
+//       }
+//     }
+//   }
+  
+//   let user1 = new User('Mike', 'MK_18', 18);
+//   let user2 = new User('', 'NRG', 22);
+  
+//   console.log(user1.getName(true));
+//   console.log(user2.getName(true));
+//   console.log(user2.getName(false));
+  
+// Завдання 3
+
+// class User {
+//     constructor(name, login, age) {
+//       this.name = name;
+//       this.login = login;
+//       this.age = age;
+//     }
+  
+//     ChangeName(newName, password) {
+//       if (password === '123') {
+//         const oldName = this.name;
+//         this.name = newName;
+//         console.log(`Name Changed from ${oldName} to ${this.name}.`);
+//       } else {
+//         console.log('Permission denied.');
+//       }
+//     }
+//   }
+  
+//   let user1 = new User('Mike', 'MK_18', 18);
+//   user1.ChangeName('Bill', '123');
+//   user1.ChangeName('Tom', '456');
+  
+// Завдання 4
+// class User {
+//     constructor(name, login, age) {
+//       this.name = name;
+//       this.login = login;
+//       this.age = age;
+//     }
+//   }
+  
+//   class Admin extends User {
+//     #isAdmin = true;
+  
+//     getUserName(user) {
+//       console.log(user.name);
+//     }
+//   }
+  
+//   let user1 = new User('Mike', 'MK_18', 18);
+//   let admin = new Admin('Admin', 'admin_1', 30);
+  
+//   admin.getUserName(user1);
+
+//   Завдання 5
+// class User {
+//     #phone;
+  
+//     constructor(name, phone) {
+//       this.name = name;
+//       this.#phone = phone;
+//     }
+  
+//     getPhone(isAdmin) {
+//       if (isAdmin) {
+//         return this.#phone;
+//       } else {
+//         const [prefix, middle, suffix] = this.#phone.split('-');
+//         const maskedPhone = `${prefix}-******-${suffix}`;
+//         return maskedPhone;
+//       }
+//     }
+//   }
+  
+//   let user1 = new User('Mike', '067-888-88-99');
+//   let user2 = new User('Tom', '099-888-88-99');
+  
+//   console.log(user1.getPhone(false)); // 067-******-99
+//   console.log(user2.getPhone(false)); // 099-******-99
+//   console.log(user1.getPhone(true)); // 067-888-88-99
+//   console.log(user2.getPhone(true)); // 099-888-88-99
+  
+  
+//   Посилення задачі
+// class User {
+//     #phone;
+  
+//     constructor(name, phone) {
+//       this.name = name;
+//       this.#phone = phone;
+//     }
+  
+//     getPhone(isAdmin) {
+//       if (isAdmin) {
+//         return this.#phone;
+//       } else {
+//         const phoneParts = this.#phone.split('-'); // Розділяємо номер на частини
+//         const middlePart = phoneParts[1]; // Вибираємо середню частину
+  
+//         // Замінюємо середню частину на зірочки (*)
+//         for (let i = 0; i < middlePart.length; i++) {
+//           phoneParts[1] = phoneParts[1].replace(phoneParts[1][i], '*');
+//         }
+  
+//         const maskedPhone = phoneParts.join('-'); // Об'єднуємо частини назад
+//         return maskedPhone;
+//       }
+//     }
+//   }
+  
+//   let user1 = new User('Mike', '067-888-88-99');
+//   let user2 = new User('Tom', '099-888-88-99');
+  
+//   console.log(user1.getPhone(false)); // 067-******-99
+//   console.log(user2.getPhone(false)); // 099-******-99
+//   console.log(user1.getPhone(true)); // 067-888-88-99
+//   console.log(user2.getPhone(true)); // 099-888-88-99
+  
+  
+  
+
+
+
+
+  
 
   
   
