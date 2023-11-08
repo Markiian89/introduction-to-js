@@ -686,6 +686,89 @@
 // user.login = 'MK_18';
 // console.log(user.userInfo()); // name: Mike, surname: Davis, age: 25, login: MK_18
 
+// Lesson 27 Успадкування
+// Завдання 1
+// let car = {
+//     type: electric,
+//     wheels: 4,
+// }
+
+// let sportCar = {
+// doors: 2
+// }
+
+// 1.1) Успадкування властивостей об'єкту car об'єктом sportCar:
+// let sportCar = Object.create(car);
+// sportCar.doors = 2;
+
+// 1.2) Створення об'єкту passengerCar, який успадковує властивості від об'єкту car і має власну властивість doors:
+// let passengerCar = Object.create(car);
+// passengerCar.doors = 4;
+
+// 1.3) Створення об'єкту toyCar, який успадковує властивості від об'єктів sportCar та car і має власну властивість type:
+// let toyCar = Object.create(sportCar);
+// toyCar.type = 'toy';
+
+// Завдання 2
+
+// let employees = {
+//     pay(month, sum) {
+//         if (!this.wallet) {
+//             this.wallet = {};
+//         }
+//         this.wallet[month] = sum;
+//     }
+// }
+
+// let frontendDeveloper = {
+//     name: 'Mike',
+//     wallet: {},
+// }
+
+// let backendDeveloper = {
+//     name: 'Bob',
+//     wallet: {},
+// }
+
+// Object.setPrototypeOf(frontendDeveloper, employees);
+// Object.setPrototypeOf(backendDeveloper, employees);
+
+// backendDeveloper.pay('june', 1500);
+// console.log(backendDeveloper.wallet.june); // 1500
+// console.log(frontendDeveloper.wallet.june); // undefined
+
+// Завдання 3
+// function User(name, age) {
+//     this.name = name;
+//     this.age = age
+// }
+
+// let user_1 = new User('Mike', 18);
+// let user_2 = new User('Bob', 25);
+
+// Завдання 4
+// function UserType(name) {
+//     for (let i = 0; i < name.length; ++i) {
+//         this[i] = name[i];
+//         if (i + 1 === name.length) {
+//             Object.defineProperty(this, 'length', {
+//                 enumerable: true,
+//                 writable: false,
+//                 configurable: true,
+//                 value: i + 1
+//             });
+//         }
+//     }
+
+//     Object.setPrototypeOf(this, Array.prototype);
+// }
+
+// let admins = new UserType(['Mike', 'Bob', 'Nikola']);
+// console.log(admins.join('; ')); // Mike; Bob; Nikola
+
+
+
+
 
 
 
