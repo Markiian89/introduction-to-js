@@ -580,8 +580,118 @@
 //   console.log(user1.getPhone(true));
 //   console.log(user2.getPhone(true));
   
-  
-  
+// lesson 26. getter, setter методи
+
+// 1 Завдання
+// const user = {};
+
+// Object.defineProperty(user, 'name', {
+//   value: 'John',
+//   writable: false,
+//   enumerable: true,
+//   configurable: false, 
+// });
+
+// Object.defineProperty(user, 'age', {
+//   value: 30,
+//   writable: false,
+//   enumerable: true,
+//   configurable: false,
+// });
+
+// Object.defineProperty(user, 'id', {
+//   value: 123,
+//   writable: false,
+//   enumerable: true,
+//   configurable: false,
+// });
+
+
+// console.log(user.name); // Виводимо ім'я (читання)
+// console.log(user.age); // Виводимо вік (читання)
+// console.log(user.id); // Виводимо ідентифікатор (читання)
+
+// user.name = 'Tom'; // Спроба змінити ім'я - не вдається (запис заборонено)
+// user.age = 35; // Спроба змінити вік - не вдається (запис заборонено)
+// delete user.id; // Спроба видалити ідентифікатор - не вдається (видалення заборонено)
+
+// Завдання 2
+// let dataBase = {
+//     dbName: 'user', 
+//     dbType: 'MySQL'
+// };
+
+// let configurateDB = {
+//     token: '123', 
+//     password: '567',
+//     user: 'admin'
+// };
+
+// Object.freeze(dataBase);
+
+// Object.seal(configurateDB);
+
+// dataBase.dbName = 'newUser'; // Спроба змінити значення властивості - не вдається (заморожено)
+// dataBase.newProp = 'newProperty'; // Спроба додати нову властивість - не вдається (заморожено)
+// delete dataBase.dbType; // Спроба видалити властивість - не вдається (заморожено)
+
+// configurateDB.token = 'newToken'; // Спроба змінити значення властивості - дозволено (заморожено)
+// configurateDB.newProp = 'newProperty'; // Спроба додати нову властивість - не вдається (заморожено)
+// delete configurateDB.password; // Спроба видалити властивість - не вдається (заморожено)
+
+// Завдання 3
+// let salaries = {
+//     frontend: 2000, 
+//     backend: 1500, 
+//     design: 1000,
+//     get sum() {
+//         let sum = 0;
+//         for (salary in this){
+//             if (!isNaN(this[salary])) {
+//                 sum += this[salary];
+//             }
+//         }
+//         return sum;
+//     },
+//     set addSalaries(salaryArray) {
+//         for (let item of salaryArray) {
+//             let parts = item.split(': ');
+//             if (parts.length === 2) {
+//                 let position = parts[0];
+//                 let newSalary = parseFloat(parts[1]);
+//                 if (!isNaN(newSalary)) {
+//                     this[position] = newSalary;
+//                 }
+//             }
+//         }
+//     }
+// };
+
+// salaries.addSalaries = ['frontend: 2500', 'backend: 1750', 'design: 1300', 'manager: 800'];
+// console.log(salaries);
+
+
+// Завдання 4
+// let user = {
+//     name: 'Mike',
+//     surname: 'Davis',
+//     age: 25,
+//     userInfo: function() {
+//         const allProperties = Object.keys(this).map(key => `${key}: ${this[key]}`);
+//         return allProperties.join(', ');
+//     }
+// };
+
+// console.log(user.userInfo()); // name: Mike, surname: Davis, age: 25
+// user.login = 'MK_18';
+// console.log(user.userInfo()); // name: Mike, surname: Davis, age: 25, login: MK_18
+
+
+
+
+
+
+
 
 
 
